@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="activity"
+            type="com.candykick.cdkgallery.DrawingActivity"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/llDrawing1"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent">
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/ic_brush_black_24dp"
+                android:onClick="@{() -> activity.setPen()}"
+                android:layout_marginStart="10dp"/>
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/ic_crop_black_24dp"
+                android:onClick="@{() -> activity.setEraser()}"
+                android:layout_marginStart="10dp"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="4"/>
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/ic_undo_black_24dp"
+                android:onClick="@{() -> activity.undo()}"/>
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/ic_redo_black_24dp"
+                android:onClick="@{() -> activity.redo()}"
+                android:layout_marginStart="10dp"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"/>
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/ic_delete_black_24dp"
+                android:onClick="@{() -> activity.deleteAll()}"
+                android:layout_marginEnd="10dp"/>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/ctDrawing"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/llDrawing1"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <android.support.v7.widget.RecyclerView
+            android:visibility="gone"
+            android:id="@+id/rvDrawingColor"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/drawingColorBackground"
+            app:layout_constraintBottom_toTopOf="@+id/llDrawing1"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> activity.savePicture()}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+        <!--<ImageView
+            android:id="@+id/divDrawing"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />-->
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

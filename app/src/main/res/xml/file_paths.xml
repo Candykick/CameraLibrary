@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <external-path
+        name="hidden"
+        path="DCIM/Camera" />
+    <!--
+    name: content:// 밑에 기록되는 패키지 밑의 경로이지만, 사진을 가리키는 위치는 같으므로 쓰이지 않음
+    path: 갤러리 내의 폴더명
+
+    중요)createImageFile()에서 해당 경로를
+    new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/pathvalue/" + imageFileName);
+    로 맞춰줬기 때문에 폴더 이름이 고정된 것.
+    -->
+</paths>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="activity"
+            type="com.candykick.cdkgallery.CameraSettingDialog"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvCameraSetting1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="전면 카메라 좌우반전"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"/>
+        <CheckBox
+            android:id="@+id/cbCameraSetting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/tvCameraSetting1"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:id="@+id/tvCameraSetting2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="수직/수평 안내선"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            app:layout_constraintTop_toBottomOf="@+id/cbCameraSetting"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"/>
+        <ListView
+            android:id="@+id/lvCameraSetting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tvCameraSetting2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="5dp"/>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

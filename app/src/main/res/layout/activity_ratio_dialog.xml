@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="activity"
+            type="com.candykick.cdkgallery.RatioDialog"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="250dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvRatioTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="비율을 설정해주세요."
+            android:textColor="@color/blackText"
+            android:textSize="19dp"
+            android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="15dp"/>
+
+        <LinearLayout
+            android:id="@+id/llRatio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/tvRatioTitle"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="5dp">
+            <EditText
+                android:id="@+id/etRatio1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="40dp"
+                android:textColor="@color/blackText"
+                android:textSize="23dp"
+                android:inputType="number"
+                android:hint="1"
+                android:maxLength="3"
+                android:textAlignment="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  :  "
+                android:textColor="@color/blackText"
+                android:textSize="19dp"
+                android:textAlignment="center"/>
+            <EditText
+                android:id="@+id/etRatio2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="40dp"
+                android:textColor="@color/blackText"
+                android:textSize="23dp"
+                android:inputType="number"
+                android:hint="1"
+                android:maxLength="3"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="확인"
+            app:layout_constraintTop_toBottomOf="@+id/llRatio"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="10dp"
+            android:onClick="@{() -> activity.okay()}"/>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

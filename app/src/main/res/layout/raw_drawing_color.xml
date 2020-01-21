@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="60dp"
+    android:layout_height="60dp">
+
+    <ImageView
+        android:id="@+id/ivRawColor"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_centerInParent="true"/>
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/ivRawColorSelected"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:src="@drawable/colorselected"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>

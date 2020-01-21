@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="strArrayArrange">
+        <item>최신순 정렬</item>
+        <item>폴더별 정렬</item>
+    </string-array>
+</resources>

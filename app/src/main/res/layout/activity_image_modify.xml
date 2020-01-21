@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="activity"
+            type="com.candykick.cdkgallery.ImageModifyActivity"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvModifyImageList"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <LinearLayout
+            android:id="@+id/llModifys"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/rvModifyImageList"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginBottom="5dp">
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp" />
+            <ImageButton
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:background="@null"
+                android:src="@drawable/ic_crop_black_24dp"
+                android:onClick="@{() -> activity.crop()}"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp" />
+            <ImageButton
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:background="@null"
+                android:src="@drawable/ic_rotate_right_black_24dp"
+                android:onClick="@{() -> activity.rotate()}"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp" />
+            <ImageButton
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:background="@null"
+                android:src="@drawable/ic_brush_black_24dp"
+                android:onClick="@{() -> activity.drawing()}"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp" />
+        </LinearLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vpModifyImageList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/llModifys"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"/>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
